@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Sat Sep 29 21:24:14 2018
+>> Linked Sat Sep 29 23:31:18 2018
 
 OUTPUT FILE NAME:   <Lab 1- Timer A blink MSP430G2553.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c0c6
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c0ac
 
 
 MEMORY CONFIGURATION
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   INFOC                 00001040   00000040  00000000  00000040  RWIX
   INFOB                 00001080   00000040  00000000  00000040  RWIX
   INFOA                 000010c0   00000040  00000000  00000040  RWIX
-  FLASH                 0000c000   00003fde  000000f8  00003ee6  RWIX
+  FLASH                 0000c000   00003fde  000000de  00003f00  RWIX
   BSLSIGNATURE          0000ffde   00000002  00000002  00000000  RWIX  ffff 
   INT00                 0000ffe0   00000002  00000002  00000000  RWIX
   INT01                 0000ffe2   00000002  00000000  00000002  RWIX
@@ -48,16 +48,16 @@ section   page    origin      length       input sections
                   000003b0    00000002     rts430_eabi.lib : boot.c.obj (.stack)
                   000003b2    0000004e     --HOLE--
 
-.text      0    0000c000    000000f8     
-                  0000c000    0000004e     main.obj (.text:main)
-                  0000c04e    00000036     main.obj (.text:Timer0_A1)
-                  0000c084    0000002c     rts430_eabi.lib : div16s.asm.obj (.text)
-                  0000c0b0    00000016                     : div16u.asm.obj (.text)
-                  0000c0c6    00000014                     : boot.c.obj (.text:_c_int00_noinit_noargs)
-                  0000c0da    0000000c     main.obj (.text:setFreq)
-                  0000c0e6    00000008     rts430_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000c0ee    00000006                     : exit.c.obj (.text:abort)
-                  0000c0f4    00000004                     : pre_init.c.obj (.text:_system_pre_init)
+.text      0    0000c000    000000de     
+                  0000c000    0000004c     main.obj (.text:main)
+                  0000c04c    0000002c     rts430_eabi.lib : div16s.asm.obj (.text)
+                  0000c078    0000001e     main.obj (.text:Timer0_A1)
+                  0000c096    00000016     rts430_eabi.lib : div16u.asm.obj (.text)
+                  0000c0ac    00000014                     : boot.c.obj (.text:_c_int00_noinit_noargs)
+                  0000c0c0    0000000c     main.obj (.text:setFreq)
+                  0000c0cc    00000008     rts430_eabi.lib : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
+                  0000c0d4    00000006                     : exit.c.obj (.text:abort)
+                  0000c0da    00000004                     : pre_init.c.obj (.text:_system_pre_init)
 
 .cinit     0    0000c000    00000000     UNINITIALIZED
 
@@ -123,9 +123,9 @@ MODULE SUMMARY
        Module             code   ro data   rw data
        ------             ----   -------   -------
     .\
-       main.obj           144    2         0      
+       main.obj           118    2         0      
     +--+------------------+------+---------+---------+
-       Total:             144    2         0      
+       Total:             118    2         0      
                                                   
     C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.2.LTS\lib\rts430_eabi.lib
        div16s.asm.obj     44     0         0      
@@ -151,7 +151,7 @@ MODULE SUMMARY
                                                   
        Stack:             0      0         80     
     +--+------------------+------+---------+---------+
-       Grand Total:       248    28        80     
+       Grand Total:       222    28        80     
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -168,7 +168,7 @@ address   name
 00000057  BCSCTL1               
 00000058  BCSCTL2               
 00000053  BCSCTL3               
-0000c0ee  C$$EXIT               
+0000c0d4  C$$EXIT               
 00000059  CACTL1                
 0000005a  CACTL2                
 000010fb  CALBC1_12MHZ          
@@ -235,7 +235,7 @@ address   name
 000010c0  TLV_CHECKSUM          
 000010f7  TLV_DCO_30_LEN        
 000010f6  TLV_DCO_30_TAG        
-0000c04e  Timer0_A1             
+0000c078  Timer0_A1             
 0000005d  UCA0ABCTL             
 00000062  UCA0BR0               
 00000063  UCA0BR1               
@@ -260,7 +260,7 @@ address   name
 00000120  WDTCTL                
 00000400  __STACK_END           
 00000050  __STACK_SIZE          
-0000c0e6  __TI_ISR_TRAP         
+0000c0cc  __TI_ISR_TRAP         
 0000ffe0  __TI_int00            
 0000ffe4  __TI_int02            
 0000ffe6  __TI_int03            
@@ -278,17 +278,17 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
-0000c084  __mspabi_divi         
-0000c0b0  __mspabi_divu         
-0000c084  __mspabi_remi         
-0000c0b0  __mspabi_remu         
-0000c0c6  _c_int00_noinit_noargs
+0000c04c  __mspabi_divi         
+0000c096  __mspabi_divu         
+0000c04c  __mspabi_remi         
+0000c096  __mspabi_remu         
+0000c0ac  _c_int00_noinit_noargs
 0000fffe  _reset_vector         
 000003b0  _stack                
-0000c0f4  _system_pre_init      
-0000c0ee  abort                 
+0000c0da  _system_pre_init      
+0000c0d4  abort                 
 0000c000  main                  
-0000c0da  setFreq               
+0000c0c0  setFreq               
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -397,17 +397,17 @@ address   name
 000010fe  CALDCO_1MHZ           
 000010ff  CALBC1_1MHZ           
 0000c000  main                  
-0000c04e  Timer0_A1             
-0000c084  __mspabi_divi         
-0000c084  __mspabi_remi         
-0000c0b0  __mspabi_divu         
-0000c0b0  __mspabi_remu         
-0000c0c6  _c_int00_noinit_noargs
-0000c0da  setFreq               
-0000c0e6  __TI_ISR_TRAP         
-0000c0ee  C$$EXIT               
-0000c0ee  abort                 
-0000c0f4  _system_pre_init      
+0000c04c  __mspabi_divi         
+0000c04c  __mspabi_remi         
+0000c078  Timer0_A1             
+0000c096  __mspabi_divu         
+0000c096  __mspabi_remu         
+0000c0ac  _c_int00_noinit_noargs
+0000c0c0  setFreq               
+0000c0cc  __TI_ISR_TRAP         
+0000c0d4  C$$EXIT               
+0000c0d4  abort                 
+0000c0da  _system_pre_init      
 0000ffe0  __TI_int00            
 0000ffe4  __TI_int02            
 0000ffe6  __TI_int03            

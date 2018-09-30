@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Wed Sep 26 18:01:30 2018
+>> Linked Sat Sep 29 23:30:09 2018
 
 OUTPUT FILE NAME:   <Button Interrupt MSP430G2553.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000c03a
