@@ -29,7 +29,7 @@ void main(void)
     P2DIR |= BIT0;                      //Sets P2.0 as an output
 
     //Clock Setup
-    TBCTL = TBSSEL_1 + MC_2 + TBCLR;    //ACLK, Continuous Mode, clear TAR
+    TBCTL = TBSSEL_1 + MC_2 + TBCLR;    //ACLK, Continuous Mode, clear TBR
 
     //Interrupt flag timing frequency setup
     TB0CCR1 = setFreq(2);                //LED 1 interrupt set for 2Hz

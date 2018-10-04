@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Mon Oct  1 15:54:30 2018
+>> Linked Wed Oct  3 18:01:26 2018
 
 OUTPUT FILE NAME:   <Button Interrupt MSP430fr2311.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000f148

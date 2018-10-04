@@ -1,10 +1,10 @@
 ******************************************************************************
                   MSP430 Linker PC v18.1.2                     
 ******************************************************************************
->> Linked Mon Oct  1 16:16:13 2018
+>> Linked Wed Oct  3 17:26:27 2018
 
 OUTPUT FILE NAME:   <Button Delay MSP430FR2311.out>
-ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000f1d8
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 0000f1e6
 
 
 MEMORY CONFIGURATION
@@ -13,7 +13,7 @@ MEMORY CONFIGURATION
 ----------------------  --------  ---------  --------  --------  ----  --------
   BSL0                  00001000   00000800  00000000  00000800  RWIX
   RAM                   00002000   00000400  000000a0  00000360  RWIX
-  FRAM                  0000f100   00000e80  000000f6  00000d8a  RWIX
+  FRAM                  0000f100   00000e80  00000102  00000d7e  RWIX
   JTAGSIGNATURE         0000ff80   00000004  00000004  00000000  RWIX  ffff 
   BSLSIGNATURE          0000ff84   00000004  00000004  00000000  RWIX  ffff 
   INT00                 0000ff88   00000002  00000000  00000002  RWIX
@@ -104,20 +104,20 @@ section   page    origin      length       input sections
 
 .const     0    0000f100    00000000     UNINITIALIZED
 
-.text      0    0000f100    000000ac     
-                  0000f100    00000054     main.obj (.text:main)
-                  0000f154    0000002c     rts430x_lc_sd_eabi.lib : div16s.asm.obj (.text)
-                  0000f180    00000016                            : div16u.asm.obj (.text)
-                  0000f196    0000000c     main.obj (.text:setFreq)
-                  0000f1a2    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
-                  0000f1a8    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+.text      0    0000f100    000000aa     
+                  0000f100    00000052     main.obj (.text:main)
+                  0000f152    0000002c     rts430x_lc_sd_eabi.lib : div16s.asm.obj (.text)
+                  0000f17e    00000016                            : div16u.asm.obj (.text)
+                  0000f194    0000000c     main.obj (.text:setFreq)
+                  0000f1a0    00000006     rts430x_lc_sd_eabi.lib : exit.c.obj (.text:abort)
+                  0000f1a6    00000004                            : pre_init.c.obj (.text:_system_pre_init)
 
 .text:_isr 
-*          0    0000f1ac    0000004a     
-                  0000f1ac    0000002c     main.obj (.text:_isr:Port_1)
-                  0000f1d8    00000014     rts430x_lc_sd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
-                  0000f1ec    00000008                            : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
-                  0000f1f4    00000002     main.obj (.text:_isr:TIMER0_B1)
+*          0    0000f1aa    00000058     
+                  0000f1aa    00000028     main.obj (.text:_isr:Port_1)
+                  0000f1d2    00000014     main.obj (.text:_isr:TIMER0_B1)
+                  0000f1e6    00000014     rts430x_lc_sd_eabi.lib : boot.c.obj (.text:_isr:_c_int00_noinit_noargs)
+                  0000f1fa    00000008                            : isr_trap.asm.obj (.text:_isr:__TI_ISR_TRAP)
 
 .stack     0    00002360    000000a0     UNINITIALIZED
                   00002360    00000002     rts430x_lc_sd_eabi.lib : boot.c.obj (.stack)
@@ -183,9 +183,9 @@ MODULE SUMMARY
        Module             code   ro data   rw data
        ------             ----   -------   -------
     .\
-       main.obj           142    4         0      
+       main.obj           154    4         0      
     +--+------------------+------+---------+---------+
-       Total:             142    4         0      
+       Total:             154    4         0      
                                                   
     C:\ti\ccsv8\tools\compiler\ti-cgt-msp430_18.1.2.LTS\lib\rts430x_lc_sd_eabi.lib
        div16s.asm.obj     44     0         0      
@@ -211,7 +211,7 @@ MODULE SUMMARY
                                                   
        Stack:             0      0         160    
     +--+------------------+------+---------+---------+
-       Grand Total:       246    30        160    
+       Grand Total:       258    30        160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -296,7 +296,7 @@ address   name
 00000672  BAKMEM9               
 00000673  BAKMEM9_H             
 00000672  BAKMEM9_L             
-0000f1a2  C$$EXIT               
+0000f1a0  C$$EXIT               
 000002ee  CAPTIOCTL             
 000002ef  CAPTIOCTL_H           
 000002ee  CAPTIOCTL_L           
@@ -455,7 +455,7 @@ address   name
 0000012a  PMMIFG                
 0000012b  PMMIFG_H              
 0000012a  PMMIFG_L              
-0000f1ac  Port_1                
+0000f1aa  Port_1                
 0000030c  RTCCNT                
 0000030d  RTCCNT_H              
 0000030c  RTCCNT_L              
@@ -579,7 +579,7 @@ address   name
 000003d0  TB1R                  
 000003d1  TB1R_H                
 000003d0  TB1R_L                
-0000f1f4  TIMER0_B1             
+0000f1d2  TIMER0_B1             
 00000f00  TRI0CTL               
 00000f01  TRI0CTL_H             
 00000f00  TRI0CTL_L             
@@ -675,7 +675,7 @@ address   name
 000001cc  WDTCTL_L              
 00002400  __STACK_END           
 000000a0  __STACK_SIZE          
-0000f1ec  __TI_ISR_TRAP         
+0000f1fa  __TI_ISR_TRAP         
 0000ffe2  __TI_int45            
 0000ffe4  __TI_int46            
 0000ffe6  __TI_int47            
@@ -694,17 +694,17 @@ ffffffff  __TI_pprof_out_hndl
 ffffffff  __TI_prof_data_size   
 ffffffff  __TI_prof_data_start  
 ffffffff  __c_args__            
-0000f154  __mspabi_divi         
-0000f180  __mspabi_divu         
-0000f154  __mspabi_remi         
-0000f180  __mspabi_remu         
-0000f1d8  _c_int00_noinit_noargs
+0000f152  __mspabi_divi         
+0000f17e  __mspabi_divu         
+0000f152  __mspabi_remi         
+0000f17e  __mspabi_remu         
+0000f1e6  _c_int00_noinit_noargs
 0000fffe  _reset_vector         
 00002360  _stack                
-0000f1a8  _system_pre_init      
-0000f1a2  abort                 
+0000f1a6  _system_pre_init      
+0000f1a0  abort                 
 0000f100  main                  
-0000f196  setFreq               
+0000f194  setFreq               
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1167,18 +1167,18 @@ address   name
 00002360  _stack                
 00002400  __STACK_END           
 0000f100  main                  
-0000f154  __mspabi_divi         
-0000f154  __mspabi_remi         
-0000f180  __mspabi_divu         
-0000f180  __mspabi_remu         
-0000f196  setFreq               
-0000f1a2  C$$EXIT               
-0000f1a2  abort                 
-0000f1a8  _system_pre_init      
-0000f1ac  Port_1                
-0000f1d8  _c_int00_noinit_noargs
-0000f1ec  __TI_ISR_TRAP         
-0000f1f4  TIMER0_B1             
+0000f152  __mspabi_divi         
+0000f152  __mspabi_remi         
+0000f17e  __mspabi_divu         
+0000f17e  __mspabi_remu         
+0000f194  setFreq               
+0000f1a0  C$$EXIT               
+0000f1a0  abort                 
+0000f1a6  _system_pre_init      
+0000f1aa  Port_1                
+0000f1d2  TIMER0_B1             
+0000f1e6  _c_int00_noinit_noargs
+0000f1fa  __TI_ISR_TRAP         
 0000ffe2  __TI_int45            
 0000ffe4  __TI_int46            
 0000ffe6  __TI_int47            
